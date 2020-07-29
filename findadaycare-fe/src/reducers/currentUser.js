@@ -6,3 +6,9 @@ export default (state = null, action) => {
       return state;
   }
 }
+
+export const clearCurrentUser = () => {
+  return {
+    type: "CLEAR_CURRENT_USER"
+  }
+}
