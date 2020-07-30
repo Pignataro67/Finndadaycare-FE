@@ -11,4 +11,10 @@ const NavBar = ({ currentUser }) => {
   )
 }
 
-export default NavBar;
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
+
+export default connect(mapStateToProps)(NavBar);
