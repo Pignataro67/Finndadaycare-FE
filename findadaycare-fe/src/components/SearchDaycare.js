@@ -32,4 +32,4 @@ class SearchDaycare extends React.Component {
   }  
 } 
 
-export default SearchDaycare;
+export default connect(null, {fetchDaycareFromYelp })(SearchDaycare);
