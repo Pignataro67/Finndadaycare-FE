@@ -14,10 +14,19 @@ class SearchDaycare extends React.Component {
     })
   }
 
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.fetchDaycareFromYelp(this.state.zip)
+  }
+
   render() {
     return (
       <div>
-        Hello  
+        <form onSubmit={this.handleSubmit}>
+          <label>Informe the ZIP code you want to do your search, please!</label>
+          <input onChange={this.handleZip} type="text" placeholder="ZIPCODE" value={this.state.zip} />
+          <input type="submit" value="Search"/>
+        </form>  
       </div>
     )   
   }  
