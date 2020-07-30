@@ -4,6 +4,16 @@ import { fetchDaycareFromYelp } from '../actions/searchDaycare.js';
 
 class SearchDaycare extends React.Component {
 
+  state = {
+    zip: ''
+  }
+
+  handleZip = e => {
+    this.setState({
+      zip: e.target.value
+    })
+  }
+
   render() {
     return (
       <div>
