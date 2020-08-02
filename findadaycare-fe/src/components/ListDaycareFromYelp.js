@@ -25,6 +25,7 @@ const ListDaycareFromYelp = (props) => {
 
     const getReviews = (event, daycare) =>  {   
       event.preventDefault();
+      renderReviews(daycare)
     }
 
     const renderDaycares = () => {

@@ -1,12 +1,28 @@
-const initialState = [];
+export const daycaresFromYelp = (businesses) => {
+  return { type: "LIST_DAYCARES_SEARCHED", payload: businesses };
+}
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case "LIST_DAYCARES_SEARCHED":
-      return action.payload
-    case "INCLUDE_REVIEWS_YELP":
-      return action.payload
-        default:
-      return state
-    }
-} 
+export const fetchDaycareFromYelp = (value) => {
+  const proxyurl = "https://cors-anywhere.herokuapp.com/"
+  const url = `https://api.yelp.com/v3/businesses/search?term=daycare&location=${value}&limit=5`
+  return dispatch => {
+      fetch(proxyurl + url, {
+          method: 'GET',
+          headers: {
+              'Accept': 'application/json',
+              'Authorization': 'Bearer 5BCE_9Zk-nhS7EcP1fYA0WcOf1L1Xq8hAY_mN5blb3Q4fH4Q-OqhBDxHGbEJstY8hOPn3WSyyHL_pdiaXiisk1fICFG445i4fUARZmQxiuhSudJo4YZ0RKOXV69SXXYx',
+              'Content-Type': 'application/json'
+          }
+      }).then(res => res.json())
+      .then(data => {
+          const businesses = data.businesses;
+          businesses.sort(function (a,b){
+              return b.rating - a.rating;
+          });        
+          const newBussinessesArray = businesses.map(business => loadingReviewsYelp(business)) 
+            
+          return newBussinessesArray
+      })
+      .then(res => dispatch(daycaresFromYelp(res)))
+  }
+}
