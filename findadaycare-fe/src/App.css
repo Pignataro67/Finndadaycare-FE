@@ -25,19 +25,24 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.NavBar {
+  display: grid;
+  justify-items: center;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.NavBar {
+  font-size: 1.6em;
+  min-height: 50px;
+  padding: 1rem 4rem;
+}
+
+hr {
+  width: 100vw;
+  height: 2px;
+  background-color: #CFCFCF;
+  border: none;
+  margin: 0;
 }
 
 @keyframes App-logo-spin {
