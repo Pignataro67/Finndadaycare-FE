@@ -45,11 +45,15 @@ hr {
   margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 30rem) {
+    nav {
+    grid-template-rows: none;
+    grid-template-columns: 1fr auto auto;
+    text-align: right;
+    justify-items: start;
+    border-bottom: 2px solid #CFCFCF;
   }
-  to {
-    transform: rotate(360deg);
+  hr {
+    display: none;
   }
 }
