@@ -1,5 +1,17 @@
+
+* { box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App-logo {
