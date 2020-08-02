@@ -51,5 +51,4 @@ const ListDaycareFromYelp = (props) => {
     )
 }
 
-
-export default ListDaycareFromYelp;
+export default connect(mapStateToProps)(ListDaycareFromYelp);
