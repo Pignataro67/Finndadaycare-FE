@@ -5,9 +5,12 @@ import Logout from './Logout.js';
 
 const NavBar = ({ currentUser }) => {
   return (
-    <div className="NavBar" >
-      { currentUser ? <Logout/> : <Login/> }
-    </div>
+    <nav className="NavBar" >
+      <div>
+        { currentUser ? <Logout/> : <Login/> }
+      </div>
+      <br></br>
+    </nav>
   )
 }
 
