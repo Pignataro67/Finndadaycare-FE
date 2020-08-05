@@ -1,46 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Reviews from './Reviews.js';
 
 const ListDaycareFromYelp = (props) => {
 
-  const renderReviews = (daycare) => {
-    if (!daycare.reviews) {
-      return;
-    }
-
-    return (
-      <ul>
-        {
-          daycare.reviews.map((review) => {
-            return (
-              <li key={daycare.id}>
-                 <p>{review.text}</p>
-              </li>
-            )
-          })
-        }
-      </ul>
-      )
-    }
+  const renderDaycares = () => {
+    return props.daycares.map((daycare) => {
+      return (
+        <div className="daycare-card" key={daycare.id}>
+          <img className="daycare__img" src={daycare.image_url} alt={`daycare: ${daycare.name}`}/>
+          <h1>{daycare.name}</h1>
+          <h2>Rating: {daycare.rating}</h2>  
+          <p>{daycare.location.display_address} | {daycare.display_phone} </p>
+          <Reviews key={daycare.id} reviews={daycare.reviews}/>
+        </div>
+      );
+    })
+  }
 
     const getReviews = (event, daycare) =>  {   
       event.preventDefault();
       renderReviews(daycare)
-    }
-
-    const renderDaycares = () => {
-      return props.daycares.map((daycare) => {
-        return (                               
-          <li key={daycare.id}>
-            <div>
-              <h2>{daycare.name}</h2>
-                <h3>Rating: {daycare.rating}</h3>  
-                  <p>{daycare.location.display_address}</p>
-                    <button type="button" name="getReviews" onClick={(event) => getReviews(event, daycare)}>Read reviews</button>                    
-            </div>    
-          </li>             
-        );
-      })
     }
 
     return (  
