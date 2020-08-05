@@ -18,18 +18,20 @@ const ListDaycareFromYelp = (props) => {
     })
   }
 
-    const getReviews = (event, daycare) =>  {   
-      event.preventDefault();
-      renderReviews(daycare)
-    }
+  
+  return (  
+    <div>  
+      <ul>
+        {renderDaycares()}
+      </ul>
+    </div> 
+  )
+}
 
-    return (  
-      <div>  
-        <ul>
-          {renderDaycares()}
-        </ul>
-      </div> 
-    )
+const mapStateToProps = state => {
+  return {
+      daycares: state.daycaresFromYelp.daycares
+  }
 }
 
 export default connect(mapStateToProps)(ListDaycareFromYelp);
