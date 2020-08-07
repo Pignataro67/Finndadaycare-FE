@@ -131,3 +131,15 @@ h1 {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.daycare__img {
+  width: 80%;
+  margin: auto;
+  box-sizing: content-box; 
+}
+
+.daycare__name {
+  padding: 2%;
+  margin: auto;
+  color: rgb(70, 67, 67);
+}
