@@ -3,10 +3,12 @@ import React from 'react';
 const Reviews = (props) => {
   return props.reviews.map(review => {
     return (
-      <ul>
-        <li>{review.text}</li>
-      </ul>
+      <div>
+        <p key={review.id} className="daycare__review">{review.text}</p> 
+        <a className="daycare__link" target="blank" href={review.url}>See full review</a> <br></br>
+      </div>
     )
   })
 }
+
 export default Reviews;
