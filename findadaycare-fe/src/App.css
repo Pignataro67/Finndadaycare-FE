@@ -161,3 +161,19 @@ h1 {
   margin-top: 1px;
   color: rgb(79, 74, 74);
 }
+
+.daycare__review {
+  width: 90%;
+  text-align: justify;
+  padding-left: 126px;
+  color: rgb(118, 115, 115);
+} 
+
+.daycare__link {
+  padding-left: 126px;
+  color: rgb(42, 131, 199);
+}
+
+.daycare__link:hover {
+  color: rgb(6, 101, 174);
+}
