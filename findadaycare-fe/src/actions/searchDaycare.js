@@ -16,10 +16,8 @@ export const fetchDaycareFromYelp = (value) => {
     }).then(res => res.json())
       .then(data => {
         const businesses = data.businesses;
-        businesses.sort(function (a,b){
-          return b.rating - a.rating;
-        });        
-          const newBussinessesArray = businesses.map(business => loadingReviewsYelp(business)) 
+       
+        const newBussinessesArray = businesses.map(business => loadingReviewsYelp(business)) 
         return newBussinessesArray
       })
       .then(res => dispatch(daycaresFromYelp(res)))
