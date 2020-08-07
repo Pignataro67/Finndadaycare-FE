@@ -143,3 +143,21 @@ h1 {
   margin: auto;
   color: rgb(70, 67, 67);
 }
+
+.daycare__rating {
+  padding-left: 126px;
+  padding-bottom: 2%;
+  margin: 0;
+  color: rgb(79, 74, 74);
+}
+
+.daycare__icon {
+  width: 1.2rem;
+    height: 1.2rem;
+}
+.daycare__address {
+  padding-left: 126px;
+  font-size: 16px;
+  margin-top: 1px;
+  color: rgb(79, 74, 74);
+}
