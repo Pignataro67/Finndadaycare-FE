@@ -18,4 +18,10 @@ class MyDaycares extends React.Component {
   }     
 }
 
-export default MyDaycares;
+const mapStateToProps = state => {
+  return {
+    daycares: state.myDaycares
+  }
+}
+
+export default connect(mapStateToProps, {fetchGetDaycare})(MyDaycares);
