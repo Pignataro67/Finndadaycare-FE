@@ -14,6 +14,11 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
     updateSignupForm(updatedFormInfo)
   }
 
+  const handleSubmit = event => {
+    event.preventDefault()
+    signup(signupFormData, history)
+  }
+
   return (
     <form>
       <label name="username"> Username: 
