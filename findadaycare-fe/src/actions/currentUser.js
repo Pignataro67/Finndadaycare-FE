@@ -1,4 +1,5 @@
 import { resetSignupForm } from "./signupForm.js";
+import { fetchGetDaycare } from "./myDaycares.js";
 
 export const setCurrentUser = user => {
   return {
@@ -78,7 +79,9 @@ export const getCurrentUser = () => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user))
-          console.log("got the user")
+          console.log("Inside actions, and the user is:", user)
+
+          dispatch(fetchGetDaycare(user.id))
         }
     })
     .catch(console.log("something is wrong"))

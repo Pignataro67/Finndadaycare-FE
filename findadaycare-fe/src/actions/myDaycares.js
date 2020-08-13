@@ -12,9 +12,9 @@ export const getDaycares = (bussiness) => {
   }
 }
 
-export const fetchGetDaycare = () => {
+export const fetchGetDaycare = (userId) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/users/1`, {
+    return fetch(`http://localhost:3001/api/v1/users/${userId}`, {
       method: 'GET',
         credentials: 'include',
         headers: {
