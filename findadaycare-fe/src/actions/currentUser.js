@@ -57,6 +57,7 @@ export const login = credentials => {
       alert(user.error)
     } else {
       dispatch(setCurrentUser(user))
+      dispatch(fetchGetDaycare(user.id))
         console.log("Sucess, you are logged in")
       }
     })
@@ -84,6 +85,6 @@ export const getCurrentUser = () => {
           dispatch(fetchGetDaycare(user.id))
         }
     })
-    .catch(console.log("something is wrong"))
+    .catch(console.log)
   }
 }
