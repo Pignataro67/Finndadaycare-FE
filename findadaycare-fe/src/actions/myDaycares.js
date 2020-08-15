@@ -5,9 +5,16 @@ export const addDaycare = (bussiness) => {
   }
 }
 
-export const getDaycares = (bussiness) => {
+export const getDaycares = (bussinesses) => {
   return {
     type: 'GET_DAYCARE',
+    payload: bussiness
+  }
+}
+
+export const deleteDaycare = (bussiness) => {
+  return {
+    type: 'DELETE_DAYCARE',
     payload: bussiness
   }
 }
