@@ -19,6 +19,13 @@ export const deleteDaycare = (bussiness) => {
   }
 }
 
+export const updateDaycare = (bussiness) => {
+  return {
+    type: 'UPDATE_DAYCARE',
+    payload: bussiness
+	}
+}
+
 export const fetchGetDaycare = (userId) => {
   return dispatch => {
     return fetch(`http://localhost:3001/api/v1/users/${userId}`, {
