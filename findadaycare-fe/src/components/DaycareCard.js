@@ -1,6 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Icon from '@mdi/react'
+import { mdiMapMarker } from '@mdi/js';
+import { updateDaycareForm, fetchUpdateDaycare } from '../actions/daycareForm.js';
+import { fetchDeleteDaycare } from '../actions/myDaycares.js';
 
 class DaycareCard extends React.Component {
+
+  handleInputChange = e => {
+    const { name, value } = e.target;
+    const updateDaycareInfo = {
+        ...this.props.daycareFormData,
+        [name]: value
+    }
+    console.log("my daycareformdata is: ", updateDaycareInfo)
+    this.props.updateDaycareForm(updateDaycareInfo)
+}
+
+handleSubmit = (e) => {
+    e.preventDefault()
+    const userId = this.props.user.id
+    const daycareId = this.props.daycare.id
+    this.props.fetchUpdateDaycare(this.props.daycareFormData, userId, daycareId)
+}
 
   render() {
     return (
