@@ -78,3 +78,17 @@ export const fetchAddDaycare = (bussiness) => {
   .catch(console.log)
   }
 }
+
+export const fetchDeleteDaycare = ( bussiness, userId ) => {
+  const myDaycareId = bussiness.id
+  return dispatch => {
+    console.log(" mydaycare", myDaycareId)
+    let url = 'http://localhost:3001/api/v1/users/' + userId + '/my_daycares/' + myDaycareId 
+    console.log(" url", url)
+    dispatch(deleteDaycare(bussiness))
+    return fetch(url, {
+      credentials: "include",
+      method: 'DELETE',
+    })
+  }
+}

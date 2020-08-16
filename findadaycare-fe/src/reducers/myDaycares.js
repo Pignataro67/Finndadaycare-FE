@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
     case "ADD_DAYCARE":
       state = {...state, daycares: state.daycares.concat(action.payload)}  
     return state.daycares.data.attributes.my_daycares
+    case "UPDATE_DAYCARE":
+    return state.map(daycare => daycare.id ===action.payload.id ? action.payload : daycare)    
       default:
     return state
   }
