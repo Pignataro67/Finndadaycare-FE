@@ -10,19 +10,24 @@ class DaycareCard extends React.Component {
   handleInputChange = e => {
     const { name, value } = e.target;
     const updateDaycareInfo = {
-        ...this.props.daycareFormData,
-        [name]: value
-    }
-    console.log("my daycareformdata is: ", updateDaycareInfo)
-    this.props.updateDaycareForm(updateDaycareInfo)
+      ...this.props.daycareFormData,
+    [name]: value
+  }
+  console.log("my daycareformdata is: ", updateDaycareInfo)
+  this.props.updateDaycareForm(updateDaycareInfo)
 }
 
 handleSubmit = (e) => {
-    e.preventDefault()
-    const userId = this.props.user.id
-    const daycareId = this.props.daycare.id
-    this.props.fetchUpdateDaycare(this.props.daycareFormData, userId, daycareId)
+  e.preventDefault()
+  const userId = this.props.user.id
+  const daycareId = this.props.daycare.id
+  this.props.fetchUpdateDaycare(this.props.daycareFormData, userId, daycareId)
 }
+
+handleDeleteDaycare = (e, daycare, user )  => {
+  e.preventDefault();
+  this.props.fetchDeleteDaycare(daycare, user.id)
+} // NEW
 
   render() {
     return (
