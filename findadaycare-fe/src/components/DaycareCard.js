@@ -50,4 +50,10 @@ handleDeleteDaycare = (e, daycare, user )  => {
   }
 }
 
-export default DaycareCard;
+const mapStateToProps = state => {
+  return {
+    daycareFormData: state.daycareForm,
+  }
+}
+
+export default connect( mapStateToProps, { fetchDeleteDaycare, updateDaycareForm, fetchUpdateDaycare })(DaycareCard);
