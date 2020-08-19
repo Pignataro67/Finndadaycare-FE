@@ -168,9 +168,9 @@ hr {
   color: rgb(79, 74, 74);
 }
 
-.daycare__icon {
-  width: 1.2rem;
-    height: 1.2rem;
+.daycare__button {
+  width: 110px;
+    height: 40px;
 }
 .daycare__address {
   padding-left: 126px;
@@ -181,7 +181,7 @@ hr {
 
 .daycare__review {
   width: 90%;
-  text-align: justify;
+  text-align: left;
   padding-left: 126px;
   color: rgb(118, 115, 115);
 } 
@@ -193,4 +193,24 @@ hr {
 
 .daycare__link:hover {
   color: rgb(6, 101, 174);
+}
+
+/* Login Form Style */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login__page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.register__form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
