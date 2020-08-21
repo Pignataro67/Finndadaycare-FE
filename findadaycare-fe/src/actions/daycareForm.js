@@ -7,6 +7,12 @@ export const updateDaycareForm = (daycareForm) => {
   }
 }
 
+export const resetDaycareForm = () => {
+  return {
+    type: "RESET_DAYCARE_FORM"
+  }
+}
+
 export const fetchUpdateDaycare = (daycareFormData, userId, daycareId) => {
   const sendDaycareData = {
     notes: daycareFormData.notes,

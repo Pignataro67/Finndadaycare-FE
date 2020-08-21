@@ -8,7 +8,9 @@ export default (state = initialState, action) => {
     case "UPDATE_DAYCARE_FORM":
     console.log("Inside reducer DaycareForm, my action is: ", action.daycareForm)
       state = {...state, [action.daycareForm.name]: action.daycareForm.value}
-      return action.daycareForm //state
+      return  action.daycareForm
+    case "RESET_DAYCARE_FORM":
+      return initialState
     default:
       return state
   }
