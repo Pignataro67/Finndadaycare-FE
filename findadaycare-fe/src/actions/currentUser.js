@@ -41,7 +41,7 @@ export const signup = (credentials, history) => {
   }
 }
 
-export const login = credentials => {
+export const login = (credentials, history) => {
   return dispatch => {
     return fetch('http://localhost:3001/api/v1/login', {
       credentials: "include",
@@ -58,6 +58,7 @@ export const login = credentials => {
     } else {
       dispatch(setCurrentUser(user))
       dispatch(fetchGetDaycare(user.id))
+        hitory.push('/')
         console.log("Sucess, you are logged in")
       }
     })
@@ -86,5 +87,15 @@ export const getCurrentUser = () => {
         }
     })
     .catch(console.log)
+  }
+}
+
+export const logout = (e) => {
+  return dispatch => {
+    dispatch(clearCurrentUser())
+    return fetch('http://localhost:3001/api/v1/destroy', {
+        credentials: "include",
+      method: "DELETE",
+    })
   }
 }
