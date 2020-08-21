@@ -5,7 +5,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import Login from './components/Login.js';
 import MyDaycares from './components/MyDaycares.js';
 import SearchDaycare from './components/SearchDaycare.js';
@@ -24,8 +24,8 @@ class App extends React.Component {
       <div  className="container">
         <NavBar/>
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/search' component={SearchDaycare}/>   
+          <Route exact path='/' component={SearchDaycare}/>
+          <Route exact path='/signup' render={({history}) => <Signup history={history} /> }/>   
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/logout' component={Logout}/>
           <Route exact path='/signup' component={Signup} />
@@ -36,4 +36,10 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, {getCurrentUser})(App);
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default withRouter(connect(mapStateToProps, {getCurrentUser})(App));
