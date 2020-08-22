@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Reviews from './Reviews.js';
 import Icon from '@mdi/react';
 import { mdiMapMarker } from '@mdi/js';
+import Button from "@material-ui/core/Button";
+import SaveIcon from '@material-ui/icons/Save';
 
 const ListDaycareFromYelp = (props) => {
 
@@ -36,6 +38,19 @@ const ListDaycareFromYelp = (props) => {
     </div> 
   )
 }
+
+<h2 className="daycare__rating">Rating: {daycare.rating}</h2>  
+                    <Reviews reviews={daycare.reviews}/>
+                    {/* </div> */}
+                    <Button onClick={(e) => handleOnClick(e, daycare)}
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                        className="daycare__button" 
+                        startIcon={<SaveIcon />}
+                    >
+                        Bookmark
+                    </Button>
 
 const mapStateToProps = state => {
   return {
