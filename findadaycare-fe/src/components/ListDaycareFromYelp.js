@@ -40,17 +40,17 @@ const ListDaycareFromYelp = (props) => {
 }
 
 <h2 className="daycare__rating">Rating: {daycare.rating}</h2>  
-                    <Reviews reviews={daycare.reviews}/>
-                    {/* </div> */}
-                    <Button onClick={(e) => handleOnClick(e, daycare)}
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        className="daycare__button" 
-                        startIcon={<SaveIcon />}
-                    >
-                        Bookmark
-                    </Button>
+  <Reviews reviews={daycare.reviews}/>
+    {/* </div> */}
+      <Button onClick={(e) => handleOnClick(e, daycare)}
+        variant="contained"
+        color="primary"
+        size="large"
+        className="daycare__button" 
+        startIcon={<SaveIcon />}
+      >
+    Bookmark
+  </Button>
 
 const mapStateToProps = state => {
   return {
