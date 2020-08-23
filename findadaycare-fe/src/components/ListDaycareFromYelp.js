@@ -10,7 +10,6 @@ const ListDaycareFromYelp = (props) => {
 
   const handleOnClick = (e, daycare) => {
     e.preventDefault();
-    console.log("Inside handleOnClick")
     props.fetchAddDaycare(daycare)
   }
 
@@ -41,20 +40,24 @@ const ListDaycareFromYelp = (props) => {
 
 <h2 className="daycare__rating">Rating: {daycare.rating}</h2>  
   <Reviews reviews={daycare.reviews}/>
-    {/* </div> */}
-      <Button onClick={(e) => handleOnClick(e, daycare)}
-        variant="contained"
-        color="primary"
-        size="large"
-        className="daycare__button" 
-        startIcon={<SaveIcon />}
-      >
+    <Button onClick={(e) => handleOnClick(e, daycare)}
+      variant="contained"
+      color="primary"
+      size="large"
+      className="daycare__button" 
+      startIcon={<SaveIcon />}
+    >
     Bookmark
   </Button>
 
+return (  
+  <ul>{renderDaycares()}</ul>
+ )
+}
+
 const mapStateToProps = state => {
   return {
-      daycares: state.daycaresFromYelp.daycares
+    daycares: state.daycaresFromYelp.daycares
   }
 }
 

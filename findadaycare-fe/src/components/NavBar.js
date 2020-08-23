@@ -15,12 +15,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = ({ loggedIn }) => {
+
+  const classes = useStyles();
   return (
     <nav className="NavBar">
       <div>
-      <NavLink exact to="/search">Search </NavLink> 
-      <NavLink exact to="/my-daycares"> My Daycares </NavLink> 
-        { loggedIn ? <NavLink exact to="/logout"> Logout </NavLink> : <NavLink exact to="/login" >Login</NavLink>} <br></br>
+      <Button className={classes.button} size="large" href={'/'}> Search </Button>
+      <Button className={classes.button} size="large" href={'/my-daycares'}> My Daycares </Button>
+      { loggedIn ? <Button className={classes.button} size="large" href={'/logout'}> Logout </Button> 
+        :  
+      <Button className={classes.button} size="large"href={'/login'}> Log In </Button>} <br></br>
       </div>
       <br></br>
     </nav>
