@@ -13,11 +13,24 @@ export const resetDaycareForm = () => {
   }
 }
 
-export const fetchUpdateDaycare = (daycareFormData, userId, daycareId) => {
+export const fetchUpdateDaycare = (daycareFormData, daycareNote, userId, daycareId) => {
+  console.log(daycareNote)
+    if (!daycareNote) {
+      daycareNote = " "
+    }
+
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+
+  console.log("after if,:", daycareNote)
+
   const sendDaycareData = {
-    notes: daycareFormData.notes,
-    schedule_visit: daycareFormData.scheduleVisit 
+    notes: daycareNote + ` |${today} `  + daycareFormData.notes, 
   }
+
   return dispatch => {
     const url = `http://localhost:3001/api/v1/users/${userId}/my_daycares/${daycareId}`
     return fetch(url, {
