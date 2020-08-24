@@ -17,18 +17,25 @@ const ListDaycareFromYelp = (props) => {
     return props.daycares.map((daycare) => {
       return (
         <li className="daycare-card" key={daycare.id}>
+        <h1 className="daycare__name">{daycare.name}</h1>
           <img className="daycare__img" src={daycare.image_url} alt={`daycare: ${daycare.name}`}/>
-          <h1>{daycare.name}</h1>
-          <h2>Rating: {daycare.rating}</h2>  
-          <p>{daycare.location.display_address} | {daycare.display_phone} </p>
+          <p className="daycare__address"> <Icon className="daycare__icon" path={mdiMapMarker} title="Daycare Address" description={daycare.location.display_address} size={1} color="red"/> {daycare.location.address1} {daycare.location.city}, {daycare.location.state} {daycare.location.zip_code}| {daycare.display_phone} </p>
+          <h2 className="daycare__rating">Rating: {daycare.rating}</h2>
+          <p className="daycare__review"><strong>Reviews</strong></p>
           <Reviews reviews={daycare.reviews}/>
-          <button onClick={(e) => handleOnClick(e, daycare)}>Add Daycare to my list</button>
+          <Button onClick={(e) => handleOnClick(e, daycare)}variant="contained"
+            color="primary"
+            size="large"
+            className="daycare__button" 
+            startIcon={<SaveIcon />}
+          >
+           Bookmark
+          </Button>
         </li>
       );
     })
   }
 
-  
   return (  
     <div>  
       <ul>
@@ -37,7 +44,7 @@ const ListDaycareFromYelp = (props) => {
     </div> 
   )
 }
-
+ 
 <h2 className="daycare__rating">Rating: {daycare.rating}</h2>  
   <Reviews reviews={daycare.reviews}/>
     <Button onClick={(e) => handleOnClick(e, daycare)}
@@ -49,6 +56,11 @@ const ListDaycareFromYelp = (props) => {
     >
     Bookmark
   </Button>
+  {/* <button onClick={(e) => handleOnClick(e, daycare)}>Add Daycare to my list</button> */}
+  </li>  
+);
+})
+}
 
 return (  
   <ul>{renderDaycares()}</ul>
