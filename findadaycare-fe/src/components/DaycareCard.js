@@ -17,13 +17,14 @@ useStyles = makeStyles(theme => ({
   },
 }));
 
+classes = () => this.useStyles();
+
 handleInputChange = e => {
   const { name, value } = e.target;
   const updateDaycareInfo = {
     ...this.props.daycareFormData,
     [name]: value
   }
-  console.log("my daycareformdata is: ", updateDaycareInfo)
   this.props.updateDaycareForm(updateDaycareInfo)
 }
 
@@ -41,11 +42,12 @@ handleDeleteDaycare = (e, daycare, user )  => {
 
   render() {
     return (
-      <div key={this.props.daycare.id}>
-        <h1>{this.props.daycare.name}</h1>
-        <p>Location: {this.props.daycare.location}</p>
-        <p>Rating: {this.props.daycare.rating} | Phone: {this.props.daycare.phone}</p>
-          <form onSubmit={this.handleSubmit}>
+      <div key={this.props.daycare.id} className="daycare-card">
+        <h1 className="daycare__name">{this.props.daycare.name}</h1>
+        <h2 className="daycare__rating">Rating: {this.props.daycare.rating}</h2>
+        <p className="daycare__address"> <Icon className="daycare__icon" path={mdiMapMarker} title="Daycare Address" description={this.props.daycare.location} size={1} color="red"/>Location: {this.props.daycare.location} | Phone: {this.props.daycare.phone}</p>
+        <p className="daycare__review"><strong>Notes: </strong>{this.props.daycare.notes}</p>
+          <form onSubmit={this.handleSubmit} className="daycare__review">
             <label> Notes: 
               <input onChange={this.handleInputChange} type="text" placeholder={this.props.daycare.notes}  name="notes" value={this.props.daycare.notes}/>
             </label> <br></br>
