@@ -37,34 +37,10 @@ const ListDaycareFromYelp = (props) => {
   }
 
   return (  
-    <div>  
-      <ul>
-        {renderDaycares()}
-      </ul>
-    </div> 
+    <ul>
+      {renderDaycares()}
+    </ul>
   )
-}
- 
-<h2 className="daycare__rating">Rating: {daycare.rating}</h2>  
-  <Reviews reviews={daycare.reviews}/>
-    <Button onClick={(e) => handleOnClick(e, daycare)}
-      variant="contained"
-      color="primary"
-      size="large"
-      className="daycare__button" 
-      startIcon={<SaveIcon />}
-    >
-    Bookmark
-  </Button>
-  {/* <button onClick={(e) => handleOnClick(e, daycare)}>Add Daycare to my list</button> */}
-  </li>  
-);
-})
-}
-
-return (  
-  <ul>{renderDaycares()}</ul>
- )
 }
 
 const mapStateToProps = state => {
