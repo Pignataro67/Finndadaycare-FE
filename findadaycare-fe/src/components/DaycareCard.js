@@ -1,14 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateDaycareForm, fetchUpdateDaycare } from '../actions/daycareForm.js';
+import { updateDaycareForm, fetchUpdateDaycare, resetDaycareForm } from '../actions/daycareForm.js';
 import { fetchDeleteDaycare } from '../actions/myDaycares.js';
+import Icon from '@mdi/react';
+import { mdiMapMarker } from '@mdi/js';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import DeleteIcon from '@material-ui/icons/Delete';
+import SaveIcon from '@material-ui/icons/Save';
 
 class DaycareCard extends React.Component {
 
-  handleInputChange = e => {
-    const { name, value } = e.target;
-    const updateDaycareInfo = {
-      ...this.props.daycareFormData,
+useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(2),
+  },
+}));
+
+handleInputChange = e => {
+  const { name, value } = e.target;
+  const updateDaycareInfo = {
+    ...this.props.daycareFormData,
     [name]: value
   }
   console.log("my daycareformdata is: ", updateDaycareInfo)
@@ -19,7 +31,7 @@ handleSubmit = (e) => {
   e.preventDefault()
   const userId = this.props.user.id
   const daycareId = this.props.daycare.id
-  this.props.fetchUpdateDaycare(this.props.daycareFormData, userId, daycareId)
+  this.props.fetchUpdateDaycare(this.props.daycareFormData, this.props.daycare.notes, userId, daycareId)
 }
 
 handleDeleteDaycare = (e, daycare, user )  => {
