@@ -63,9 +63,13 @@ handleDeleteDaycare = (e, daycare, user )  => {
               startIcon={<SaveIcon />}>
                 Save
             </Button>
-              <input type="submit" value="Save"/> 
+            <Button onClick={(e) => this.handleDeleteDaycare(e, this.props.daycare, this.props.user)}
+            variant="contained"
+            color="secondary"  
+            endIcon={<DeleteIcon />}>
+              Delete
+            </Button>
           </form> 
-            <button onClick={(e) => this.handleDeleteDaycare(e, this.props.daycare, this.props.user)} >Delete</button>
       </div>
     )
   }
@@ -77,4 +81,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect( mapStateToProps, { fetchDeleteDaycare, updateDaycareForm, fetchUpdateDaycare })(DaycareCard);
+export default connect(mapStateToProps,{ fetchDeleteDaycare, updateDaycareForm, fetchUpdateDaycare, resetDaycareForm })(DaycareCard);
