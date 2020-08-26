@@ -49,10 +49,11 @@ handleDeleteDaycare = (e, daycare, user )  => {
         <p className="daycare__review"><strong>Notes: </strong>{this.props.daycare.notes}</p>
           <form onSubmit={this.handleSubmit} className="daycare__review">
             <label> Notes: 
-              <input onChange={this.handleInputChange} type="text" placeholder={this.props.daycare.notes}  name="notes" value={this.props.daycare.notes}/>
+              <input className="daycare__notes" onChange={this.handleInputChange} type="text" placeholder="Add new note" name="notes" value={ this.props.daycareFormData.notes }/>
             </label> <br></br>
+            <br></br>
             <label> Schedule a Visit
-              <input onChange={this.handleInputChange} type="text" placeholder={this.props.daycare.schedule_visit} name="scheduleVisit" value={this.props.daycare.schedule_visit}/>
+              <input className="daycare__schedule" onChange={this.handleInputChange} type="text" placeholder={this.props.daycare.schedule_visit} name="scheduleVisit" value={this.props.daycareFormData.schedule_visit}/>
             </label> <br></br>
               <input type="submit" value="Save"/> 
           </form> 
