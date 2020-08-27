@@ -8,11 +8,11 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 
   const handleInputChange = e => {
     const {name, value } = e.target
-    const updateFomrInfo = {
+    const updateFormInfo = {
       ...loginFormData,
       [name]: value
     }
-    updateLoginForm(updateFomrInfo)
+    updateLoginForm(updateFormInfo)
   }
   
   const handleSubmit = e => {
@@ -42,4 +42,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login } )(Login);
+export default connect(mapStateToProps, { updateLoginForm, login })(Login);
