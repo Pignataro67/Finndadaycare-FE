@@ -39,7 +39,7 @@ export const fetchGetDaycare = (userId) => {
           if (data.error) {
             alert(data.error)
           } else {
-    const myDaycares = data.attributes.my_daycare
+    let myDaycares = data
       dispatch(getDaycares(myDaycares))
     }
   })

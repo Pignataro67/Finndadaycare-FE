@@ -81,8 +81,6 @@ export const getCurrentUser = () => {
           alert(user.error)
         } else {
           dispatch(setCurrentUser(user))
-          console.log("Inside actions, and the user is:", user)
-
           dispatch(fetchGetDaycare(user.id))
         }
     })

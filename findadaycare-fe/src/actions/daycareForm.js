@@ -2,8 +2,8 @@ import { updateDaycare } from '../actions/myDaycares.js';
 
 export const updateDaycareForm = (daycareForm) => {
   return {
-      type: "UPDATE_DAYCARE_FORM",
-      daycareForm
+    type: "UPDATE_DAYCARE_FORM",
+    daycareForm
   }
 }
 
@@ -28,7 +28,8 @@ export const fetchUpdateDaycare = (daycareFormData, daycareNote, userId, daycare
   console.log("after if,:", daycareNote)
 
   const sendDaycareData = {
-    notes: daycareNote + ` |${today} `  + daycareFormData.notes, 
+    notes: daycareNote + ` |${today} `  + daycareFormData.notes,
+    schedule_visit: daycareFormData.scheduleVisit 
   }
 
   return dispatch => {
