@@ -38,5 +38,5 @@ export const loadingReviewsYelp = (business) => {
         business.reviews =  data.reviews
         return dispatch(daycaresFromYelp(business))
       })
-  )
+    }
 }
