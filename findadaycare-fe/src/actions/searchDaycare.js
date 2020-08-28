@@ -16,11 +16,8 @@ export const fetchDaycareFromYelp = (value) => {
     }).then(res => res.json())
       .then(data => {
         const businesses = data.businesses;
-       
-        const newBussinessesArray = businesses.map(business => loadingReviewsYelp(business)) 
-        return newBussinessesArray
+        businesses.map(business => dispatch(loadingReviewsYelp(business))) 
       })
-      .then(res => dispatch(daycaresFromYelp(res)))
   }
 }
 
@@ -28,7 +25,7 @@ export const loadingReviewsYelp = (business) => {
   const businessId = business.id
   const proxyurl = "https://cors-anywhere.herokuapp.com/"
   const url = `https://api.yelp.com/v3/businesses/${businessId}/reviews`
-  return (
+  return dispatch => {
     fetch(proxyurl + url, {
       method: 'GET',
       headers: {
@@ -39,7 +36,7 @@ export const loadingReviewsYelp = (business) => {
     }).then(res => res.json())
       .then(data => {
         business.reviews =  data.reviews
-        return business
+        return dispatch(daycaresFromYelp(business))
       })
   )
 }
