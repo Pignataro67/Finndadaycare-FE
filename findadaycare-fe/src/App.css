@@ -39,13 +39,13 @@ body {
 
 .NavBar {
   font-size: 1.6em;
-  min-height: 45px;
+  min-height: 50px;
   padding: 1rem 4rem;
 }
 
 hr {
-  width: 100vw;
-  height: 5px;
+  width: 90vw;
+  height: 10px;
   background-color: #CFCFCF;
   border: none;
   margin: 0;
@@ -65,9 +65,9 @@ hr {
 }
 
 .search {
-  min-width: 1015px;
+  min-width: 1000px;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("./images/daycare-image.jpg");
-  height: 960px;
+  height: 950px;
   background-color: #333;
   background-size: cover;
   /* background-position: 50%; */
@@ -82,34 +82,34 @@ hr {
   margin: auto;
   text-align: center;
   color: rgb(247, 242, 233);
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
 }
 
 .search_form h1 {
   color: #fff;
-  margin-bottom: 40px;
-  font-size: 50px;
-  letter-spacing: 2px;
+  margin-bottom: 45px;
+  font-size: 45px;
+  letter-spacing: 4px;
 }
 
 .search__field {
   height: 44px;
-  width: 400px;
-  padding: 10px;
-  border-radius: 25px;
+  width: 395px;
+  padding: 20px;
+  border-radius: 30px;
   outline: none;
   text-align: center;
 }
 
 .search__btn {
-  height: 50px;
-  width: 150px;
-  margin: 5px;
+  height: 45px;
+  width: 155px;
+  margin: 10px;
   background: rgb(9, 194, 198);
   border: none;
   color: #000;
-  border-radius: 30px;
+  border-radius: 25px;
 }
 
 .search__btn:hover {
