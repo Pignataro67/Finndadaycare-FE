@@ -29,8 +29,8 @@ nav > div {
 }
 
 hr {
-  width: 90vw;
-  height: 10px;
+  width: 100vw;
+  height: 2px;
   background-color: #CFCFCF;
   border: none;
   margin: 0;
@@ -50,9 +50,9 @@ hr {
 }
 
 .search {
-  min-width: 1000px;
+  min-width: 1020px;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("./images/daycare-image.jpg");
-  height: 950px;
+  height: 960px;
   background-color: #333;
   background-size: cover;
   /* background-position: 50%; */
@@ -73,28 +73,28 @@ hr {
 
 .search_form h1 {
   color: #fff;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   font-size: 45px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .search__field {
   height: 44px;
-  width: 395px;
-  padding: 20px;
+  width: 400px;
+  padding: 10px;
   border-radius: 30px;
   outline: none;
   text-align: center;
 }
 
 .search__btn {
-  height: 45px;
-  width: 155px;
-  margin: 10px;
+  height: 44px;
+  width: 150px;
+  margin: 5px;
   background: rgb(9, 194, 198);
   border: none;
   color: #000;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 
 .search__btn:hover {
