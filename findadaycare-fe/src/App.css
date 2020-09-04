@@ -158,16 +158,17 @@ hr {
   height: 40px;
 }
 .daycare__address {
-  padding-left: 115px;
-  font-size: 15px;
-  margin-top: 5px;
+  text-align: left;
+  padding-left: 126px;
+  font-size: 16px;
+  margin-top: 1px;
   color: rgb(79, 74, 74);
 }
 
 .daycare__review {
   width: 90%;
   text-align: left;
-  padding-left: 120px;
+  padding-left: 126px;
   color: rgb(118, 115, 115);
 } 
 
@@ -184,7 +185,7 @@ hr {
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login__page {
-  width: 350px;
+  width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -193,9 +194,9 @@ hr {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 350px;
+  max-width: 360px;
   margin: 0 auto 100px;
-  padding: 50px;
+  padding: 45px;
   text-align: center;
   box-shadow: 2 2 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -214,14 +215,18 @@ hr {
 
 .register__input {
   font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
   outline: 0;
-  background: #f2f2f2;
+  background: #4CAF50;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
-  box-sizing: border-box;
+  color: #FFFFFF;
   font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
 
 .register__input {
