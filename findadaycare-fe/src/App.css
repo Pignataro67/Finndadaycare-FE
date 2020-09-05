@@ -213,14 +213,13 @@ hr {
   font-size: 14px;
 }
 
-.register__input {
+.register__button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
@@ -229,18 +228,12 @@ hr {
   cursor: pointer;
 }
 
-.register__input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 90%;
-  border: 5;
-  margin: 5 5 20px;
-  padding: 20px;
-  box-sizing: border-box;
-  font-size: 17px;
+.register__button:hover,.register__button:active,.register__button:focus {
+  background: #43A047;
 }
 
-.form .login__form {
-  display: none;
+.register__message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
 }
