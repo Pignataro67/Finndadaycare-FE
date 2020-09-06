@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-// import MainContainer from './components/MainContainer';
+import NavBar from './components/NavBar.js';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser.js';
 import NavBar from './components/NavBar.js';
@@ -11,7 +10,6 @@ import MyDaycares from './components/MyDaycares.js';
 import SearchDaycare from './components/SearchDaycare.js';
 import Signup from './components/Signup.js';
 import Logout from './components/Logout.js';
-import Home from './components/Home.js';
 
 class App extends React.Component {
   
@@ -28,7 +26,6 @@ class App extends React.Component {
           <Route exact path='/signup' render={({history}) => <Signup history={history} /> }/>   
           <Route exact path='/login' component={Login}/> 
           <Route exact path='/logout' component={Logout}/>
-          <Route exact path='/signup' component={Signup} />
           <Route exact path='/my-daycares' component={MyDaycares} />
         </Switch>      
       </div>
