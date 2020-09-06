@@ -237,3 +237,14 @@ hr {
   color: #b3b3b3;
   font-size: 12px;
 }
+
+.register__message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.form .login__form {
+  display: none;
+}
+
+//NEW
