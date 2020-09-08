@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import usersReducer from './reducers/users.js';
 import currentUser from './reducers/currentUser.js';
 import loginForm from './reducers/loginForm.js';
 import daycaresFromYelp from './reducers/searchDaycare.js';
